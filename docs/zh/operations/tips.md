@@ -41,7 +41,7 @@ echo 'performance' | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_gover
 
 ## 巨大的页面 {#huge-pages}
 
-始终禁用透明巨大的页面。 它会干扰内存分alloc，从而导致显着的性能下降。
+始终禁用透明大页。 它会干扰内存分配，从而导致显着的性能下降。
 
 ``` bash
 echo 'never' | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
@@ -100,7 +100,7 @@ XFS也是合适的，但它还没有经过ClickHouse的彻底测试。
 
 如果可能的话，至少使用一个10GB的网络。 1Gb也可以工作，但对于使用数十tb的数据修补副本或处理具有大量中间数据的分布式查询，情况会更糟。
 
-## 动物园管理员 {#zookeeper}
+## zookeeeper {#zookeeper}
 
 您可能已经将ZooKeeper用于其他目的。 您可以使用相同的zookeeper安装，如果它还没有超载。
 
